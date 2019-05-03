@@ -5,4 +5,4 @@ date: '2019-05-03 21:33:43 +0100'
 categories: announcements
 ---
 
-Welcome to my blog. I hope you will enjoy my writing. I mostly write about security, identity and access managment , angular, react and ethical hacking, GraphQL etc
+Welcome to my blog. I hope you will enjoy my writing. I mostly write about security, identity and access managment , angular, react and ethical hacking, GraphQL etc. I would be very happy to accet any contribution. If you want to submit a blog post, pull this project and start writing!
