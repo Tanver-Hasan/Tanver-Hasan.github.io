@@ -466,6 +466,47 @@ curl -X POST \
 		
 curl -X DELETE http://localhost:7000/api/products/2
 ```
+
+#### Improving the project
+
+As of now, we are adding the HTTP header to the outgoing  response in the in http request handler. For RESTFull API, It is important to return the response in the JSON format and the HTTP content type response HEADER `application/json`.  Untill now, we are duplicating the code in each handler. Using middleware we can add the HTTP header easily for all outgoing response. Therefore, it should reduce code duplication. 
+
+Like other progromming language, go support HTTP middleware. Lets create a  folder middlewares and create a file name httpheader.go. 
+
+*Middlewares are (typically) small pieces of code which take one request, do something with it, and pass it down to another middleware or the final handler. Some common use cases for middleware are request logging, header manipulation, or ResponseWriter hijacking.*
+
+The signature of net/http middleware looks like below. 
+
+```
+type MiddlewareFunc func(http.Handler) http.Handler
+```
+
+**httpheader.go**
+
+```
+package middlewares
+
+import "net/http"
+
+func AddingHttpHeaderMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		next.ServeHTTP(w, r)
+	})
+}
+
+```
+
+Add this middleware in the main.go file , Middlewares can be added to a router using `Router.Use()`
+
+```
+
+	r.Use(middlewares.AddingHttpHeaderMiddleware)
+	
+```
+
+At this point , we can remove the adding HTTP header in the handler methods. As we have seen , middleware is really powerfull. Later we will use middleware to secure API endpoint using JWT. 
+
 In the upcoming  blog post, I will show step by step process on how to 
 
 *           Analyzing the source code and potentially tweek the code to make it production ready. 
