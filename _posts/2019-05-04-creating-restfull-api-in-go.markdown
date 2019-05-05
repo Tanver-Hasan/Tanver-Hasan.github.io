@@ -1,7 +1,7 @@
 ---
 title: Developing scalable RESTFull API using GO, POSTGRES, GORM
 layout: post
-date: '2019-05-03 21:33:43 +0100'
+date: '2019-05-05 21:33:43'
 categories: golang
 ORM: gorm
 Secure API: JWT (JSON web token)
