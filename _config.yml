@@ -18,9 +18,10 @@ email: Tanver.Hasan@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   This is my personal blog. I do this for fun and to keep my brain fresh. I believe that sharing knowledge is the best way to learn. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tanver-hasan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: T_H_Noman
 github_username:  Tanver-Hasan
+linkedin_username: tanver-hasan
 
 # Build settings
 markdown: kramdown
@@ -29,7 +30,8 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-
+  - jekyll-paginate
+paginate: 5
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
