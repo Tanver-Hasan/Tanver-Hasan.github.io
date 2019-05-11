@@ -514,4 +514,6 @@ In the upcoming  blog post, I will show step by step process on how to
 * 					Developing the front end application using angular 
 * 					Dockerizing the API server and angular application
 * 					Deploying the API server and angular for testing 
-* 					Scalling the API server using docker swrm
+* 					Building secure docker image 
+* 					Scalling the API server using docker swarm
+*
