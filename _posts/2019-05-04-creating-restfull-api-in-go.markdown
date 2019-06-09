@@ -505,7 +505,7 @@ Add this middleware in the main.go file , Middlewares can be added to a router u
 	
 ```
 
-At this point , we can remove the adding HTTP header in the handler methods. As we have seen , middleware is really powerfull. Later we will use middleware to secure API endpoint using JWT. 
+At this point , we can remove adding HTTP header in the handler methods. As we have seen , middleware is really powerfull. Later we will use middleware to secure API endpoint using JWT. 
 
 # Updating the project to use go module
 Let's have a look at the new mechanism to maintain the go dependencies (Go Module). Using the `go get` command, it is not possible to use a specific version of the dependency. Go introduced a module system which completely addresses the issue. Interestingly, the module mechanism removes the go src path requirements.  Create a project directory anywhere in the machine and copy paste the project files. Run `go mod init api-server`.  This command generates two files.` go.mod` and `go.sum` and . Modify the specific version if you want to use the older version of any package. Run `go build ` which download all the dependencies defined in the `go.mod` file.  Now, run the project `go run main.go`. 
