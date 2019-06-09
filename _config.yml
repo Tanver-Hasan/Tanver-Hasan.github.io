@@ -4,6 +4,7 @@ description: >-
   This is my personal blog. I do this for fun and to keep my brain fresh. I
   believe that sharing knowledge is the best way to learn. 
 baseurl: ''
+google_analytics: UA-141700151-1
 url: 'https://tanverhasan.com'
 twitter_username: T_H_Noman
 github_username: Tanver-Hasan
@@ -15,4 +16,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-avatar
+  - jemoji
+  - jekyll-mentions
+  - jekyll-include-cache
 paginate: 5
+search: true
