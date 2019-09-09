@@ -20,5 +20,10 @@ plugins:
   - jemoji
   - jekyll-mentions
   - jekyll-include-cache
+  - jekyll-analytics
 paginate: 5
 search: true
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: UA-141700151-1         # Required - replace with your tracking id
+    anonymizeIp: false 

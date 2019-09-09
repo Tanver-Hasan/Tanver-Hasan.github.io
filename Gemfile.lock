@@ -42,6 +42,7 @@ GEM
       jekyll (~> 3.3)
       sinatra (~> 1.4)
       sinatra-contrib (~> 1.4)
+    jekyll-analytics (0.1.11)
     jekyll-avatar (0.7.0)
       jekyll (>= 3.0, < 5.0)
     jekyll-feed (0.12.1)
@@ -121,6 +122,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.8.5)
   jekyll-admin
+  jekyll-analytics
   jekyll-avatar
   jekyll-feed (~> 0.6)
   jekyll-include-cache
@@ -133,4 +135,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   2.0.1
+   1.17.3
