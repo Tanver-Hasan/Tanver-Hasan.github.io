@@ -23,6 +23,12 @@ plugins:
   - jekyll-analytics
 paginate: 5
 search: true
+disqus:
+    shortname: tanverhasan-com.disqus.com
+header_pages:
+  - about.md
+  - portfolio.md
+#show_excerpts: true
 jekyll_analytics:
   GoogleAnalytics:          # Add, if you want to track with Google Analytics
     id: UA-141700151-1         # Required - replace with your tracking id

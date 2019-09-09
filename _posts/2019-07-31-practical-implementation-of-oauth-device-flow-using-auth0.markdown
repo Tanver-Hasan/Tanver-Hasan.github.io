@@ -3,6 +3,7 @@ title: Practical Implementation of Oauth Device Flow using Auth0
 layout: post
 category: oauth2.0
 date: '2019-07-31 23:16:29'
+comments: true
 ---
 
 In this blog post, I am going to dicuss Oauth Device Flow and how it can be applied to secure IOT devices. This blog post will not focuss on the details   how device flow work under the hood. Rather I will develop a CLI to demonastrate  how to implement it and secure IOT devices. 

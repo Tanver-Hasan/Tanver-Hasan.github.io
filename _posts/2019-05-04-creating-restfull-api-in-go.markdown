@@ -5,6 +5,7 @@ date: '2019-05-05 21:33:43'
 categories: golang
 ORM: gorm
 Secure API: JWT (JSON web token)
+comments: true
 ---
 
 **Summary**

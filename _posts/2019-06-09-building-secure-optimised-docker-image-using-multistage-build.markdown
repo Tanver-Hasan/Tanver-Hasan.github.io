@@ -4,6 +4,7 @@ layout: post
 category: docker
 date: '2019-06-09 03:20:33'
 New field 1: golang
+comments: true
 ---
 
 In this post, I am going to walk  through how to build  a secure and optimized docker image. 
