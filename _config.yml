@@ -2,10 +2,10 @@ title: Tanver Blog
 email: Tanver.Hasan@outlook.com
 description: >-
   This is my personal blog. I do this for fun and to keep my brain fresh. I
-  believe that sharing knowledge is the best way to learn. 
-baseurl: ''
+  believe that sharing knowledge is the best way to learn.
+baseurl: ""
 google_analytics: UA-141700151-1
-url: 'https://tanverhasan.com'
+url: "https://tanverhasan.com"
 twitter_username: T_H_Noman
 github_username: Tanver-Hasan
 linkedin_username: tanver-hasan
@@ -24,12 +24,12 @@ plugins:
 paginate: 5
 search: true
 disqus:
-    shortname: tanverhasan-com.disqus.com
+  shortname: tanverhasan-com.disqus.com
 header_pages:
   - about.md
   - portfolio.md
 #show_excerpts: true
 jekyll_analytics:
-  GoogleAnalytics:          # Add, if you want to track with Google Analytics
-    id: UA-141700151-1         # Required - replace with your tracking id
-    anonymizeIp: false 
+  GoogleAnalytics: # Add, if you want to track with Google Analytics
+    id: UA-141700151-1 # Required - replace with your tracking id
+    anonymizeIp: false
