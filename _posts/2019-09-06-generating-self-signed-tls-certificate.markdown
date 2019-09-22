@@ -96,7 +96,7 @@ openssl req -newkey rsa:2048 -days 365 -out test.csr -keyout test.pem
 If there is no need for CA, then openssl can be used to generate self-signed certificate and private key. The following command creates rsa 2048 bit key and self singed certificate from scratch. 
 
 ```
-openssl x509 -in site1-certificate.pem -pubkey -noout > site1-public-key.pem
+openssl req -x509 -nodes -sha256 -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
 ```
 
 ### Retrieving public key from x509 certificate. 
