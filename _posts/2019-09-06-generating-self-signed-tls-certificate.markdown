@@ -116,7 +116,8 @@ openssl s_client -connect tanverhasan.com:443
 ```
 
 Finally, these are some of the `openssl` common commands. To read more about openssl, I woud recommed the following books. 
-https://www.feistyduck.com/library/openssl-cookbook/online/ch-openssl.html
+
+[https://www.feistyduck.com/library/openssl-cookbook/online/ch-openssl.html](https://www.feistyduck.com/library/openssl-cookbook/online/ch-openssl.html)
 
 
 ### Optional
