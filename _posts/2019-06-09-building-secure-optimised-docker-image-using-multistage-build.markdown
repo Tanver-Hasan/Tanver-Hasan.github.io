@@ -185,3 +185,8 @@ PID                 USER                TIME                COMMAND
 ```
 
 As promised, we drastically reducied the size of the docker image and droped the priviliege to reduce the attack surface in the container. Finally, never store secret information in the container and do not expose docker service using tcp port. The reasoning is that docker service to a TCP port allows non-root users to gain root access on the host.
+
+
+{% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}

@@ -521,3 +521,9 @@ In the upcoming  blog post, I will show step by step process on how to
 * 					Dockerizing the API server 
 * 					Deploying the API server  
 * 					Scalling the API server using docker swarm
+
+
+
+{% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}
