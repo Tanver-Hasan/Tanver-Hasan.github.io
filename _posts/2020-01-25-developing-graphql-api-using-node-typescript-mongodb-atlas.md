@@ -9,7 +9,7 @@ layout: post
 
 ### Summary 
 
-Yet another framework / mechanism to expose data from backend.  Dont we have RESTFull API already. Every developer spends significant amount of time to understand and develop the RESTfull API. Most organisation uses RESTFull API. 
+Yet another framework / mechanism to expose data from backend.  Dont we have RESTFull API already. Every developer spends significant amount of time to understand and develop the RESTfull API. Most organisation uses RESTFull API for production application. Then
 
 > Why we need GraphQL? 
 
@@ -29,16 +29,14 @@ Paypal adapted Graphql: [https://medium.com/paypal-engineering/graphql-a-success
 
 To develop the GraphQL API, I will usse Node with typescript. Typescript is another part I love. It helps to minimize the sily mistake we regularly do in javascript. It is a strongly typed language which then compiles to javascript. 
 
-We are not going to spin up our own local database. Rather I will take advantage of MongoDB atlas. It offers free MongoDB cluster for development purpose.
+We are not going to spin up our own local database. Rather, I will take advantage of MongoDB atlas. It offers free MongoDB cluster for development purpose.
 
 
 ### Develop Backend 
 
-Lets get started. 
+Let's get started!
 
-*  Setup project 
-
-Create a folder and navigate to the folder.  Make sure you have node and npm installed. Run the following command
+Create a project directory in local machine.  Make sure you have `node` and `npm` installed. Run the following command
 
 ```
 
@@ -57,6 +55,24 @@ tslint --init
 ```
 
 In the tsconfig.json file, change **outDir**: **./dist**. Thefore, compiled javascript will be available in the dist folder.  
+
+Add the following code in the tslint.json  file 
+
+```
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "object-literal-sort-keys": false,
+        "no-console":false   // Disable console log warning
+    },
+    "rulesDirectory": []
+}
+```
+
 
 Lets install GraphQL related packages. 
 
@@ -128,19 +144,16 @@ npm install --save  graphql apollo-server express assert @types/assert mongodb @
     "check-types": "^10.0.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
-    "csv-parser": "^2.3.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "express-jwt": "^5.3.1",
-    "express-jwt-authz": "^2.3.1",
     "graphql": "^14.5.8",
     "graphql-subscriptions": "^1.1.0",
     "helmet": "^3.21.1",
     "http": "0.0.0",
     "jsonwebtoken": "^8.5.1",
     "jwks-rsa": "^1.6.0",
-    "mongo-getdb": "^4.1.0",
     "mongodb": "^3.3.2",
     "subscriptions-transport-ws": "^0.9.16",
     "winston": "^3.2.1"
@@ -174,7 +187,7 @@ Lets start working on the actual code. At first, create a folder src and create 
 
 
 
-I am not going to discuss all the code. However, comments before each piece of code should explain the purpose of having those line. Rather, I will only focus on graphql specific code. 
+I am not going to discuss all the code. However, comments before each  line  of code should explain the purpose of having those line. Rather, I will only focus on graphql specific code. 
 
 ```
 import bodyParser from "body-parser";
@@ -278,12 +291,12 @@ export default function server(db: Db) {
 
 ```
 
-This code exposes the server function which takes mongodb conconnections instance as argument and return the ApolloServer. ApolloServer implements graphql schema and subscription and other plugins. Follow the ApolloServer documentation for understanding all the options.
+This code exposes the server function which takes mongodb conconnections instance as argument and return the ApolloServer instance. ApolloServer implements graphql schema and subscription and other plugins. Follow the ApolloServer documentation for understanding all the options.
 
-`Schema`  is loaed from schema.ts files. 
+`Schema`  is loaded from `schema.ts` files. 
 
 
-schema.ts files contains the follwoing code. 
+`schema.ts` files contains the follwoing code. 
 
 ```
 import { GraphQLSchema } from "graphql";
@@ -296,9 +309,9 @@ export const Schema = new GraphQLSchema({
 });
 ```
 
-It initialized graphql schema and expose the scema to be used in the server.ts file. mutation and subscription is commented out at this moment. We are going only implement graphql query first. 
+It initialized graphql schema and expose the schema to be used in the `server.ts` file. mutation and subscription is commented out at this moment. We are going to only implement graphql query first. 
 
-Graphql query is implemented in the RootQueryType.ts file. 
+Graphql query is implemented in the `RootQueryType.ts` file. 
 
 ```
 import { GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString } from "graphql";
@@ -340,7 +353,7 @@ export const RootQueryType = new GraphQLObjectType({
 
 ```
 
-RootQueryType creates an instance of GraphQLObjectType. Each object type should have a name and fileds defination. Fileds can have many filed type. Abobe code implements GetDeals and GetDealById fields. Each field should have type and resolver. Type specify what sort of data this field is going to return and resolve method loads and retuns that data. In this  implementation, I am just returns simple JSON object which is a product type. As we are using typescript, we have to define the fileds type. Lets implement graphql types for product. 
+RootQueryType creates an instance of `GraphQLObject`Type. Each object type should have a name and fileds defination. Fileds can have many filed type. Abobe code implements GetDeals and GetDealById fields. Each field should have type and resolver. Type specify what sort of data this field is going to return and resolve method loads and retuns that data. In this  implementation, I am just returns simple JSON object which is a product type. As we are using typescript, we have to define the fileds type. Lets implement graphql types for product. 
 
 ```
 import { GraphQLInt, GraphQLObjectType, GraphQLString } from "graphql";
@@ -372,7 +385,7 @@ Server Successfully Started
 🚀 Subscriptions ready at ws://localhost:4001/subscriptions
 ```
 
-Navigate to http://localhost:4001/graphql. Apollo Graphql playground should be displayed to play with graphql API. 
+Navigate to http://localhost:4001/graphql. Apollo Graphql playground should be available to play with graphql API. 
 
 Run a Query like below and execute. 
 
@@ -385,7 +398,7 @@ Run a Query like below and execute.
   }
 }
 ```
-Awoesome! Our graphql server is up and running and query is available. 
+Awoesome! Our graphql server is up and running and query is retuns product data. 
 
 #### Connecting to Mongodb:
 
