@@ -123,3 +123,8 @@ Finally, these are some of the `openssl` common commands. To read more about ope
 ### Optional
 
 Asymmetric encryption is computationally expensive. To make things easier, the most system combines both asymmetric and symmetric algorithm. For example, the bulk amount of data are encrypted using the symmetric algorithm. In the symmetric algorithm, the same key should be used to encrypt and decrypt data. Once the data is encrypted and transmitted to the receiver. The receiver needs the key used to decrypt the data. To transport the key, the asymmetric key algorithm is used.
+
+
+{% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}

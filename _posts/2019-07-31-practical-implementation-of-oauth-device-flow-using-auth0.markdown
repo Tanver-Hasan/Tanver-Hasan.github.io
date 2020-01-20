@@ -206,3 +206,8 @@ Let me know describe what I did .  At first , as I am developing CLI, flag is bu
 `login()` function takes care of executing the device flow as described eairlier. At first, I developed a valid JSON  using Josn.Marsal function and then passed the JSON object in the HTTP request body when calling` /oauth/device/code` endpoint. For http request, I am usig built in HTTP library in go. ( I am not going to delv in how to write. Rather, I will describe from high level and the purpose of each function. ). Once the response `/oauth/device/code` returns the response, the next things we need to open this `verification_uri_complete` or `verification_uri ` in the browser to login. The difference between this two param is that verification_uri does not populate the device code when navigated to the web page. However, `verification_uri_complete` automatically populate the device code. For simplicity, I provided a function to generate qr code for `verification_uri_complete`. Therefore, user does not have to write the URL manually. They can just scan the QR code.  Once we verify the user idnetity, we need to obtain the token form server. As the device flow is designed for input constrat device, there is no way to know when to make request to obtain the toke. Instead, desinged proposed to constally pool the token from the server.
 
 `poolingToken()` method makes an HTTP reqest to /oauth/token eendpoint in every 30 sec to check user has finised authentiation. Once user finished the authentication, the sever will return HTTP status code 200 and returns the token.
+
+
+{% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}

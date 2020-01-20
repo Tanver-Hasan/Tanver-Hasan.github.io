@@ -3,6 +3,7 @@ title: Developing GraphQL API using Node (Typescript) + MongoDB Atlas
 category: GraphQL
 date: '2020-01-20 09:25:57'
 layout: post
+comments: true
 ---
 
 > In this post, I am going to discuss how to develop GraphQL API and consume the GraphQL API from frontend client. 
@@ -422,6 +423,8 @@ export async function connect() {
 }
 ```
 
+
+
 It is mandatory to whitelist the machine IP address in the mongo atlas console. Otherwise, connection will be refused.
 
 #### Project Repository: 
@@ -429,3 +432,8 @@ It is mandatory to whitelist the machine IP address in the mongo atlas console. 
 This project should be available in the follwing Github Repo: 
 
 [https://github.com/Tanver-Hasan/zuul-api-gateway-with-auth/tree/node-graphql](https://github.com/Tanver-Hasan/zuul-api-gateway-with-auth/tree/node-graphql)
+
+
+{% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}
