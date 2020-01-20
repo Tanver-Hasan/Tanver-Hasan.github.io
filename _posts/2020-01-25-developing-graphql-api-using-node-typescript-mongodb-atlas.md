@@ -1,7 +1,7 @@
 ---
 title: Developing GraphQL API using Node (Typescript) + MongoDB Atlas
 category: GraphQL
-date: '2020-01-25 09:25:57'
+date: '2020-01-20 09:25:57'
 layout: post
 ---
 
